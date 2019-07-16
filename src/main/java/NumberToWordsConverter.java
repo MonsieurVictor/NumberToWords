@@ -56,6 +56,7 @@ public class NumberToWordsConverter implements INumberToWords {
 
     public String toWords(int n) {
         StringBuilder s = new StringBuilder();
+        s = null;
         if (n < 1) {
             System.out.println("Illegal number!");
         } else if (n >= 1 && n <= 9) {
@@ -71,15 +72,15 @@ public class NumberToWordsConverter implements INumberToWords {
 
     private StringBuilder convert1To9(int n) {
 
-
         StringBuilder str = new StringBuilder();
-        str.de
+        str = null;
         str = digits[n - 1];
         return str;
     }
 
     private StringBuilder convert10To99(int n) {
         StringBuilder str = new StringBuilder();
+        str = null;
 
         if (n <= 19) {
             str = teenth[n % 10];
@@ -96,6 +97,7 @@ public class NumberToWordsConverter implements INumberToWords {
 
     private StringBuilder convert100To999(int n) {
         StringBuilder str = new StringBuilder();
+        str = null;
         str = hundreds[n / 100 - 1];
         if (n/100 > 0) {
             str.append(" ");
