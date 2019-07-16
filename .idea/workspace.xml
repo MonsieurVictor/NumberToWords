@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/NumberToWordsConverter.java" line="64" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/NumberToWordsConverter.java" line="70" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="baa7ff7b-4b03-48c5-8d7a-4a930d3d840e" name="Default Changelist" comment="" />
@@ -29,17 +29,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ControllerConsole.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+            <state relative-caret-position="155">
+              <caret line="14" selection-start-line="14" selection-start-column="2" selection-end-line="19" selection-end-column="74" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/INumberToWords.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/SimpleBenchmark.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+            <state relative-caret-position="272">
+              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+              <folding>
+                <element signature="e#183#184#0" expanded="true" />
+                <element signature="e#237#238#0" expanded="true" />
+                <element signature="e#280#281#0" expanded="true" />
+                <element signature="e#334#335#0" expanded="true" />
+                <element signature="e#281#282#0" expanded="true" />
+                <element signature="e#330#331#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,8 +55,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/NumberToWordsConverter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="75" column="14" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
+            <state relative-caret-position="249">
+              <caret line="58" column="13" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
+              <folding>
+                <marker date="1563289645787" expanded="true" signature="3638:3717" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,8 +67,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ConsoleViewer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="68">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+              <folding>
+                <element signature="e#81#82#0" expanded="true" />
+                <element signature="e#118#119#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,8 +82,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -76,6 +91,7 @@
     <findStrings>
       <find>teenth[n</find>
       <find>str</find>
+      <find>getins</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -88,6 +104,7 @@
         <option value="$PROJECT_DIR$/src/main/java/ConsoleViewer.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/INumberToWords.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SimpleBenchmark.java" />
         <option value="$PROJECT_DIR$/src/main/java/ControllerConsole.java" />
         <option value="$PROJECT_DIR$/src/main/java/NumberToWordsConverter.java" />
       </list>
@@ -184,12 +201,12 @@
       <option name="presentableId" value="Default" />
       <updated>1563194220425</updated>
       <workItem from="1563194221890" duration="8632000" />
-      <workItem from="1563277769414" duration="8844000" />
+      <workItem from="1563277769414" duration="12903000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17476000" />
+    <option name="totallyTimeSpent" value="21535000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -205,8 +222,8 @@
       <window_info anchor="bottom" id="Messages" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32967034" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.061569016" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.2901099" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.4856008" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.28997022" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -265,55 +282,55 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/NumberToWordsConverter.java</url>
-          <line>63</line>
+          <line>69</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/NumberToWordsConverter.java</url>
-          <line>81</line>
+          <line>85</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/NumberToWordsConverter.java</url>
-          <line>92</line>
+          <line>98</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/NumberToWordsConverter.java</url>
-          <line>68</line>
+          <line>74</line>
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/NumberToWordsConverter.java</url>
-          <line>87</line>
+          <line>93</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/NumberToWordsConverter.java</url>
-          <line>89</line>
+          <line>95</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/NumberToWordsConverter.java</url>
-          <line>90</line>
+          <line>96</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/NumberToWordsConverter.java</url>
-          <line>66</line>
+          <line>72</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/NumberToWordsConverter.java</url>
-          <line>61</line>
+          <line>67</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
@@ -323,8 +340,12 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/ConsoleViewer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="68">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <folding>
+            <element signature="e#81#82#0" expanded="true" />
+            <element signature="e#118#119#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -337,8 +358,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ControllerConsole.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        <state relative-caret-position="155">
+          <caret line="14" selection-start-line="14" selection-start-column="2" selection-end-line="19" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/src.zip!/java/util/GregorianCalendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="962">
+          <caret line="502" column="50" selection-start-line="502" selection-start-column="50" selection-end-line="502" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/src.zip!/java/util/Calendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="1779" column="16" selection-start-line="1779" selection-start-column="16" selection-end-line="1779" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -349,10 +384,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SimpleBenchmark.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding>
+            <element signature="e#183#184#0" expanded="true" />
+            <element signature="e#237#238#0" expanded="true" />
+            <element signature="e#280#281#0" expanded="true" />
+            <element signature="e#334#335#0" expanded="true" />
+            <element signature="e#281#282#0" expanded="true" />
+            <element signature="e#330#331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/NumberToWordsConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="75" column="14" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
+        <state relative-caret-position="249">
+          <caret line="58" column="13" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
+          <folding>
+            <marker date="1563289645787" expanded="true" signature="3638:3717" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

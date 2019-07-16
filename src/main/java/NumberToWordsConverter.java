@@ -2,7 +2,7 @@ package main.java;
 
 public class NumberToWordsConverter implements INumberToWords {
 
-    StringBuilder[] digits = new StringBuilder[]{
+    private StringBuilder[] digits = new StringBuilder[]{
             new StringBuilder("один"),
             new StringBuilder("два"),
             new StringBuilder("три"),
@@ -14,7 +14,7 @@ public class NumberToWordsConverter implements INumberToWords {
             new StringBuilder("девять")
     };
 
-    StringBuilder[] teenth = new StringBuilder[]{
+    private StringBuilder[] teenth = new StringBuilder[]{
             new StringBuilder("десять"),
             new StringBuilder("одиннадцать"),
             new StringBuilder("двенадцать"),
@@ -27,7 +27,7 @@ public class NumberToWordsConverter implements INumberToWords {
             new StringBuilder("девятнадцать")
     };
 
-    StringBuilder[] twoDigits = new StringBuilder[]{
+    private StringBuilder[] twoDigits = new StringBuilder[]{
             new StringBuilder("двадцать"),
             new StringBuilder("тридцать"),
             new StringBuilder("сорок"),
@@ -38,11 +38,11 @@ public class NumberToWordsConverter implements INumberToWords {
             new StringBuilder("девяносто")
     };
 
-    StringBuilder[] hundreds = new StringBuilder[]{
+    private StringBuilder[] hundreds = new StringBuilder[]{
             new StringBuilder("сто"),
             new StringBuilder("двести"),
             new StringBuilder("триста"),
-            new StringBuilder("четыреса"),
+            new StringBuilder("четыреста"),
             new StringBuilder("пятьсот"),
             new StringBuilder("шестьсот"),
             new StringBuilder("семьсот"),
@@ -50,13 +50,18 @@ public class NumberToWordsConverter implements INumberToWords {
             new StringBuilder("девятьсот")
     };
 
-    public String toWords() {
-        return null;
+    public String toWords(){
+        StringBuilder superStr = new StringBuilder();
+        for (int i = 1; i<=999; i++) {
+
+                superStr.append(toWords(i));
+                superStr.append(", \n ");
+            }
+    return superStr.toString();
     }
 
     public String toWords(int n) {
         StringBuilder s = new StringBuilder();
-        s = null;
         if (n < 1) {
             System.out.println("Illegal number!");
         } else if (n >= 1 && n <= 9) {
@@ -73,20 +78,20 @@ public class NumberToWordsConverter implements INumberToWords {
     private StringBuilder convert1To9(int n) {
 
         StringBuilder str = new StringBuilder();
-        str = null;
-        str = digits[n - 1];
+        str.append(digits[n - 1]);
         return str;
     }
 
     private StringBuilder convert10To99(int n) {
         StringBuilder str = new StringBuilder();
-        str = null;
-
-        if (n <= 19) {
-            str = teenth[n % 10];
+        if (n<=9){
+            str.append(digits[n-1]);
+            return str;
+        } else if (n <= 19) {
+            str.append(teenth[n % 10]);
             return str;
         } else {
-            str = twoDigits[n / 10 - 2];
+            str.append(twoDigits[n / 10 - 2]);
             if ((n % 10) > 0) {
                 str.append(" ");
                 str.append(convert1To9(n % 10));
@@ -97,12 +102,21 @@ public class NumberToWordsConverter implements INumberToWords {
 
     private StringBuilder convert100To999(int n) {
         StringBuilder str = new StringBuilder();
-        str = null;
-        str = hundreds[n / 100 - 1];
-        if (n/100 > 0) {
+//        str = hundreds[n / 100 - 1]; вот где были ошибки
+        str.append(hundreds[n / 100 - 1]);
+
+        if (n%100 > 0) {
             str.append(" ");
             str.append(convert10To99(n % 100));
         }
+
         return str;
+
     }
 }
+
+//String a = "a";
+//String b = "b";
+//b = a ;
+//b = "c";
+//System.out.println(a); // c

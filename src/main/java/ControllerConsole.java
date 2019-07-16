@@ -2,9 +2,9 @@ package main.java;
 
 public class ControllerConsole {
 
-
-    NumberToWordsConverter converter = new NumberToWordsConverter();
-    ConsoleViewer consoleViewer = new ConsoleViewer();
+    NumberToWordsConverter converter;
+    ConsoleViewer consoleViewer;
+    SimpleBenchmark benchmark = new SimpleBenchmark();
 
     ControllerConsole(NumberToWordsConverter converter, ConsoleViewer consoleViewer){
         this.consoleViewer = consoleViewer;
@@ -12,10 +12,19 @@ public class ControllerConsole {
     }
 
     public void start(){
-        for (int i = 21; i <= 22; i++) {
+        benchmark.start();
+        for (int i = 1; i <= 999; i++) {
             consoleViewer.view(converter.toWords(i));
         }
-//        consoleViewer.view(converter.toWords(22));
+        benchmark.finish();
+        consoleViewer.view(String.valueOf(benchmark.countTimePassed()));
+
+
+
+        benchmark.start();
+        consoleViewer.view(converter.toWords());
+        benchmark.finish();
+        consoleViewer.view(String.valueOf(benchmark.countTimePassed()));
     }
 
 }
