@@ -12,6 +12,10 @@ public class ControllerConsole {
     }
 
     public void start(){
-        converter.toWords(5);
+        for (int i = 21; i <= 22; i++) {
+            consoleViewer.view(converter.toWords(i));
+        }
+//        consoleViewer.view(converter.toWords(22));
     }
+
 }

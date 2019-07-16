@@ -1,76 +1,106 @@
 package main.java;
 
-public class NumberToWordsConverter implements INumberToWords  {
+public class NumberToWordsConverter implements INumberToWords {
 
-    public String toWords(){
+    StringBuilder[] digits = new StringBuilder[]{
+            new StringBuilder("один"),
+            new StringBuilder("два"),
+            new StringBuilder("три"),
+            new StringBuilder("четыре"),
+            new StringBuilder("пять"),
+            new StringBuilder("шесть"),
+            new StringBuilder("семь"),
+            new StringBuilder("восемь"),
+            new StringBuilder("девять")
+    };
+
+    StringBuilder[] teenth = new StringBuilder[]{
+            new StringBuilder("десять"),
+            new StringBuilder("одиннадцать"),
+            new StringBuilder("двенадцать"),
+            new StringBuilder("тринадцать"),
+            new StringBuilder("четырнадцать"),
+            new StringBuilder("пятнадцать"),
+            new StringBuilder("шестнадцать"),
+            new StringBuilder("семнадцать"),
+            new StringBuilder("восемнадцать"),
+            new StringBuilder("девятнадцать")
+    };
+
+    StringBuilder[] twoDigits = new StringBuilder[]{
+            new StringBuilder("двадцать"),
+            new StringBuilder("тридцать"),
+            new StringBuilder("сорок"),
+            new StringBuilder("пятьдесят"),
+            new StringBuilder("шестьдесят"),
+            new StringBuilder("семьдесят"),
+            new StringBuilder("восемьдесят"),
+            new StringBuilder("девяносто")
+    };
+
+    StringBuilder[] hundreds = new StringBuilder[]{
+            new StringBuilder("сто"),
+            new StringBuilder("двести"),
+            new StringBuilder("триста"),
+            new StringBuilder("четыреса"),
+            new StringBuilder("пятьсот"),
+            new StringBuilder("шестьсот"),
+            new StringBuilder("семьсот"),
+            new StringBuilder("восемьсот"),
+            new StringBuilder("девятьсот")
+    };
+
+    public String toWords() {
         return null;
     }
 
-    public String toWords(int n){
-        String s = new String();
+    public String toWords(int n) {
+        StringBuilder s = new StringBuilder();
         if (n < 1) {
             System.out.println("Illegal number!");
         } else if (n >= 1 && n <= 9) {
-            s = convertFrom1To9(n);
-        } else if (n >= 10 && n <= 19) {
-            s = convertFrom10To19(n);
-        } else if (n >= 20 && n <=99 ){
-            s = convert
-        }
-        return s;
+            s = convert1To9(n);
+        } else if (n >= 10 && n <= 99) {
+            s = convert10To99(n);
+
+        } else if (n >= 100 && n <= 999) {
+            s = convert100To999(n);
+        } else  System.out.println("Illegal number!");
+        return s.toString();
     }
 
-    private String convertFrom1To9(int n) {
-        switch (n) {
-            case 1:
-                return "один";
-            case 2:
-                return "два";
-            case 3:
-                return "три";
-            case 4:
-                return "четыре";
-            case 5:
-                return "пять";
-            case 6:
-                return "шесть";
-            case 7:
-                return "семь";
-            case 8:
-                return "восемь";
-            case 9:
-                return "девять";
-            default:
-                return "error";
-        }
+    private StringBuilder convert1To9(int n) {
+
+
+        StringBuilder str = new StringBuilder();
+        str.de
+        str = digits[n - 1];
+        return str;
     }
 
-    private String convertFrom10To19(int n) {
-        switch (n) {
-            case 10:
-                return "десять";
-            case 11:
-                return "одиннадцать";
-            case 2:
-                return "двенадцать";
-            case 3:
-                return "тринадцать";
-            case 4:
-                return "четырнадцать";
-            case 5:
-                return "пятнадцать";
-            case 6:
-                return "шестнадцать";
-            case 7:
-                return "семнадцать";
-            case 8:
-                return "восемнадцать";
-            case 9:
-                return "девятнадцать";
-            default:
-                return "error";
+    private StringBuilder convert10To99(int n) {
+        StringBuilder str = new StringBuilder();
+
+        if (n <= 19) {
+            str = teenth[n % 10];
+            return str;
+        } else {
+            str = twoDigits[n / 10 - 2];
+            if ((n % 10) > 0) {
+                str.append(" ");
+                str.append(convert1To9(n % 10));
+            }
+            return str;
         }
     }
 
-
+    private StringBuilder convert100To999(int n) {
+        StringBuilder str = new StringBuilder();
+        str = hundreds[n / 100 - 1];
+        if (n/100 > 0) {
+            str.append(" ");
+            str.append(convert10To99(n % 100));
+        }
+        return str;
+    }
 }
