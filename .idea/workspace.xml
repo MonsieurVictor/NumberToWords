@@ -28,20 +28,20 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/SuperController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="535">
+                <state relative-caret-position="561">
                   <caret line="33" selection-start-line="33" selection-end-line="33" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/ConverterStringBuffer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+                <state relative-caret-position="391">
+                  <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
                 </state>
               </provider>
             </entry>
@@ -136,7 +136,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/ConverterStringBuffer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="423">
+                <state relative-caret-position="1751">
                   <caret line="103" column="46" lean-forward="true" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
                 </state>
               </provider>
@@ -171,6 +171,7 @@
       <find>.append</find>
       <find>StringBuilder</find>
       <find>String</find>
+      <find>Время</find>
     </findStrings>
     <replaceStrings>
       <replace>+=</replace>
@@ -198,8 +199,8 @@
         <option value="$PROJECT_DIR$/src/main/java/ControllerStringConsole.java" />
         <option value="$PROJECT_DIR$/src/main/java/ControllerStringBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/ControllerStringBuffer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ConverterStringBuffer.java" />
         <option value="$PROJECT_DIR$/src/main/java/SuperController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ConverterStringBuffer.java" />
       </list>
     </option>
   </component>
@@ -295,12 +296,12 @@
       <updated>1563194220425</updated>
       <workItem from="1563194221890" duration="8632000" />
       <workItem from="1563277769414" duration="15029000" />
-      <workItem from="1563469792743" duration="4442000" />
+      <workItem from="1563469792743" duration="4593000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28103000" />
+    <option name="totallyTimeSpent" value="28254000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -315,7 +316,7 @@
       <window_info anchor="bottom" id="Messages" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32967034" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.23733863" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.23733863" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.28997022" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -535,17 +536,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ConverterStringBuffer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/SuperController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+        <state relative-caret-position="561">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SuperController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ConverterStringBuffer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="391">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
         </state>
       </provider>
     </entry>

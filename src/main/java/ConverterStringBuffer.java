@@ -1,6 +1,6 @@
 package main.java;
 
-public class ConverterStringBuffer {
+public class ConverterStringBuffer implements IConverter {
 
     private StringBuffer[] digits = new StringBuffer[]{
             new StringBuffer("один"),
