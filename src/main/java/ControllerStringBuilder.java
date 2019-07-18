@@ -1,12 +1,13 @@
 package main.java;
 
-public class ControllerConsole {
+public class ControllerStringBuilder {
 
-    NumberToWordsConverter converter;
+    ConverterStringBuilder converter;
     ConsoleViewer consoleViewer;
     SimpleBenchmark benchmark = new SimpleBenchmark();
+    Record record = new Record();
 
-    ControllerConsole(NumberToWordsConverter converter, ConsoleViewer consoleViewer){
+    ControllerStringBuilder(ConverterStringBuilder converter, ConsoleViewer consoleViewer){
         this.consoleViewer = consoleViewer;
         this.converter = converter;
     }
@@ -17,14 +18,11 @@ public class ControllerConsole {
             consoleViewer.view(converter.toWords(i));
         }
         benchmark.finish();
-        consoleViewer.view(String.valueOf(benchmark.countTimePassed()));
-
-
+        record.setOneByOneTime(benchmark.countTimePassed());
 
         benchmark.start();
         consoleViewer.view(converter.toWords());
         benchmark.finish();
-        consoleViewer.view(String.valueOf(benchmark.countTimePassed()));
+        record.setComplexTime(benchmark.countTimePassed());
     }
-
 }

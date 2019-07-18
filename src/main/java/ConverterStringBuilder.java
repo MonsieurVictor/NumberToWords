@@ -1,6 +1,6 @@
 package main.java;
 
-public class NumberToWordsConverter implements INumberToWords {
+public class ConverterStringBuilder implements IConverter {
 
     private StringBuilder[] digits = new StringBuilder[]{
             new StringBuilder("один"),

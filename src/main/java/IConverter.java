@@ -1,6 +1,6 @@
 package main.java;
 
-public interface INumberToWords {
+public interface IConverter {
     String toWords();
     String toWords(int n);
 }
