@@ -102,15 +102,12 @@ public class ConverterStringBuffer implements IConverter {
 
     private StringBuffer convert100To999(int n) {
         StringBuffer str = new StringBuffer();
-//        str = hundreds[n / 100 - 1]; вот где были ошибки
         str.append(hundreds[n / 100 - 1]);
 
         if (n%100 > 0) {
             str.append(" ");
             str.append(convert10To99(n % 100));
         }
-
         return str;
-
     }
 }

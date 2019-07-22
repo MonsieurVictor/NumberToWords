@@ -102,7 +102,6 @@ public class ConverterStringBuilder implements IConverter {
 
     private StringBuilder convert100To999(int n) {
         StringBuilder str = new StringBuilder();
-//        str = hundreds[n / 100 - 1]; вот где были ошибки
         str.append(hundreds[n / 100 - 1]);
 
         if (n%100 > 0) {
@@ -114,9 +113,3 @@ public class ConverterStringBuilder implements IConverter {
 
     }
 }
-
-//String a = "a";
-//String b = "b";
-//b = a ;
-//b = "c";
-//System.out.println(a); // c
