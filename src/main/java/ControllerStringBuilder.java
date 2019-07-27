@@ -2,6 +2,7 @@ package main.java;
 
 public class ControllerStringBuilder {
 
+
     ConverterStringBuilder converter;
     ConsoleViewer consoleViewer;
     SimpleBenchmark benchmark = new SimpleBenchmark();
@@ -14,7 +15,7 @@ public class ControllerStringBuilder {
 
     public void start(){
         benchmark.start();
-        for (int i = 1; i <= 999; i++) {
+        for (int i = 1; i <= 19999; i++) {
             consoleViewer.view(converter.toWords(i));
         }
         benchmark.finish();

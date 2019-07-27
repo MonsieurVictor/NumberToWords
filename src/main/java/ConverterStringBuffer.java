@@ -2,57 +2,26 @@ package main.java;
 
 public class ConverterStringBuffer implements IConverter {
 
-    private StringBuffer[] digits = new StringBuffer[]{
-            new StringBuffer("один"),
-            new StringBuffer("два"),
-            new StringBuffer("три"),
-            new StringBuffer("четыре"),
-            new StringBuffer("пять"),
-            new StringBuffer("шесть"),
-            new StringBuffer("семь"),
-            new StringBuffer("восемь"),
-            new StringBuffer("девять")
+    private String[] digits = new String[]{
+            "один","два","три","четыре","пять","шесть","семь","восемь","девять"
     };
 
-    private StringBuffer[] teenth = new StringBuffer[]{
-            new StringBuffer("десять"),
-            new StringBuffer("одиннадцать"),
-            new StringBuffer("двенадцать"),
-            new StringBuffer("тринадцать"),
-            new StringBuffer("четырнадцать"),
-            new StringBuffer("пятнадцать"),
-            new StringBuffer("шестнадцать"),
-            new StringBuffer("семнадцать"),
-            new StringBuffer("восемнадцать"),
-            new StringBuffer("девятнадцать")
+    private String[] teenth = new String []{
+            "десять","одиннадцать","двенадцать","тринадцать","четырнадцать",
+            "пятнадцать","шестнадцать","семнадцать","восемнадцать","девятнадцать"
     };
 
-    private StringBuffer[] twoDigits = new StringBuffer[]{
-            new StringBuffer("двадцать"),
-            new StringBuffer("тридцать"),
-            new StringBuffer("сорок"),
-            new StringBuffer("пятьдесят"),
-            new StringBuffer("шестьдесят"),
-            new StringBuffer("семьдесят"),
-            new StringBuffer("восемьдесят"),
-            new StringBuffer("девяносто")
+    private String[] twoDigits = new String []{
+            "двадцать","тридцать","сорок","пятьдесят","шестьдесят","семьдесят","восемьдесят","девяносто"
     };
 
-    private StringBuffer[] hundreds = new StringBuffer[]{
-            new StringBuffer("сто"),
-            new StringBuffer("двести"),
-            new StringBuffer("триста"),
-            new StringBuffer("четыреста"),
-            new StringBuffer("пятьсот"),
-            new StringBuffer("шестьсот"),
-            new StringBuffer("семьсот"),
-            new StringBuffer("восемьсот"),
-            new StringBuffer("девятьсот")
+    private String[] hundreds = new String []{
+            "сто","двести","триста","четыреста","пятьсот","шестьсот","семьсот","восемьсот","девятьсот"
     };
 
     public String toWords(){
         StringBuffer superStr = new StringBuffer();
-        for (int i = 1; i<=999; i++) {
+        for (int i = 1; i<=2147483647; i++) {
 
             superStr.append(toWords(i));
             superStr.append(", \n ");
@@ -76,7 +45,6 @@ public class ConverterStringBuffer implements IConverter {
     }
 
     private StringBuffer convert1To9(int n) {
-
         StringBuffer str = new StringBuffer();
         str.append(digits[n - 1]);
         return str;
@@ -103,7 +71,6 @@ public class ConverterStringBuffer implements IConverter {
     private StringBuffer convert100To999(int n) {
         StringBuffer str = new StringBuffer();
         str.append(hundreds[n / 100 - 1]);
-
         if (n%100 > 0) {
             str.append(" ");
             str.append(convert10To99(n % 100));

@@ -2,58 +2,31 @@ package main.java;
 
 public class ConverterStringBuilder implements IConverter {
 
-    private StringBuilder[] digits = new StringBuilder[]{
-            new StringBuilder("один"),
-            new StringBuilder("два"),
-            new StringBuilder("три"),
-            new StringBuilder("четыре"),
-            new StringBuilder("пять"),
-            new StringBuilder("шесть"),
-            new StringBuilder("семь"),
-            new StringBuilder("восемь"),
-            new StringBuilder("девять")
+    private String[] digits = new String[]{
+            "один","два","три","четыре","пять","шесть","семь","восемь","девять"
     };
 
-    private StringBuilder[] teenth = new StringBuilder[]{
-            new StringBuilder("десять"),
-            new StringBuilder("одиннадцать"),
-            new StringBuilder("двенадцать"),
-            new StringBuilder("тринадцать"),
-            new StringBuilder("четырнадцать"),
-            new StringBuilder("пятнадцать"),
-            new StringBuilder("шестнадцать"),
-            new StringBuilder("семнадцать"),
-            new StringBuilder("восемнадцать"),
-            new StringBuilder("девятнадцать")
+    private String[] teens = new String []{
+            "десять","одиннадцать","двенадцать","тринадцать","четырнадцать",
+            "пятнадцать","шестнадцать","семнадцать","восемнадцать","девятнадцать"
     };
 
-    private StringBuilder[] twoDigits = new StringBuilder[]{
-            new StringBuilder("двадцать"),
-            new StringBuilder("тридцать"),
-            new StringBuilder("сорок"),
-            new StringBuilder("пятьдесят"),
-            new StringBuilder("шестьдесят"),
-            new StringBuilder("семьдесят"),
-            new StringBuilder("восемьдесят"),
-            new StringBuilder("девяносто")
+    private String[] twoDigits = new String []{
+            "двадцать","тридцать","сорок","пятьдесят","шестьдесят",
+            "семьдесят","восемьдесят","девяносто"
     };
 
-    private StringBuilder[] hundreds = new StringBuilder[]{
-            new StringBuilder("сто"),
-            new StringBuilder("двести"),
-            new StringBuilder("триста"),
-            new StringBuilder("четыреста"),
-            new StringBuilder("пятьсот"),
-            new StringBuilder("шестьсот"),
-            new StringBuilder("семьсот"),
-            new StringBuilder("восемьсот"),
-            new StringBuilder("девятьсот")
+    private String[] hundreds = new String []{
+            "сто","двести","триста","четыреста","пятьсот",
+            "шестьсот","семьсот","восемьсот","девятьсот"
     };
 
+    private String[] thousands = new String[]{
+            "одна тысяча","две тысячи","три тысячи","четыре тысячи","пять тысяч",
+            "шесть тысяч","семь тысяч","восемь тысяч","девять тысяч"};
     public String toWords(){
         StringBuilder superStr = new StringBuilder();
-        for (int i = 1; i<=999; i++) {
-
+        for (int i = 1; i <= 19999; i++) {
                 superStr.append(toWords(i));
                 superStr.append(", \n ");
             }
@@ -61,22 +34,25 @@ public class ConverterStringBuilder implements IConverter {
     }
 
     public String toWords(int n) {
-        StringBuilder s = new StringBuilder();
+        StringBuilder str = new StringBuilder();
         if (n < 1) {
             System.out.println("Illegal number!");
         } else if (n >= 1 && n <= 9) {
-            s = convert1To9(n);
+            str = convert1To9(n);
         } else if (n >= 10 && n <= 99) {
-            s = convert10To99(n);
-
+            str = convert10To99(n);
         } else if (n >= 100 && n <= 999) {
-            s = convert100To999(n);
-        } else  System.out.println("Illegal number!");
-        return s.toString();
+            str = convert100To999(n);
+        } else if (n >= 1000 && n <= 9999) {
+            str  = convert1to9Thousands(n);
+        } else if (n >= 10000 && n <= 19999) {
+            str = convert10to19Thousands(n);
+        } else
+            System.out.println("Illegal number!");
+        return str.toString();
     }
 
     private StringBuilder convert1To9(int n) {
-
         StringBuilder str = new StringBuilder();
         str.append(digits[n - 1]);
         return str;
@@ -84,11 +60,11 @@ public class ConverterStringBuilder implements IConverter {
 
     private StringBuilder convert10To99(int n) {
         StringBuilder str = new StringBuilder();
-        if (n<=9){
-            str.append(digits[n-1]);
+        if (n <= 9){
+            str.append(digits[n - 1]);
             return str;
         } else if (n <= 19) {
-            str.append(teenth[n % 10]);
+            str.append(teens[n % 10]);
             return str;
         } else {
             str.append(twoDigits[n / 10 - 2]);
@@ -103,13 +79,31 @@ public class ConverterStringBuilder implements IConverter {
     private StringBuilder convert100To999(int n) {
         StringBuilder str = new StringBuilder();
         str.append(hundreds[n / 100 - 1]);
-
-        if (n%100 > 0) {
+        if (n % 100 > 0) {
             str.append(" ");
             str.append(convert10To99(n % 100));
         }
-
         return str;
+    }
 
+    private StringBuilder convert1to9Thousands(int n) {
+        StringBuilder str = new StringBuilder();
+        str.append(thousands[n / 1000 - 1]);
+        if (n % 1000 > 0) {
+            str.append(" ");
+            str.append(toWords(n % 1000));
+        }
+        return str;
+    }
+
+    private StringBuilder convert10to19Thousands(int n) {
+        StringBuilder str = new StringBuilder();
+        str.append(convert10To99(n / 1000 ));
+        str.append(" тысяч");
+        if (n % 1000 > 0) {
+            str.append(" ");
+            str.append(toWords(n % 1000));
+        }
+        return str;
     }
 }
