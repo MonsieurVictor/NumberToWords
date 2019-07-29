@@ -24,11 +24,20 @@ public class ConverterStringBuilder implements IConverter {
     private String[] thousands = new String[]{
             "одна тысяча","две тысячи","три тысячи","четыре тысячи","пять тысяч",
             "шесть тысяч","семь тысяч","восемь тысяч","девять тысяч"};
+
+    private String[] millions = new String[]{
+            "один миллион", "два миллиона", "три миллиона", "четыре миллиона", "пять миллионов", "шесть миллионов", "семь миллионов", "восемь миллионов", "девять миилионов"
+    };
+
+    private String[] billions = new String[]{
+            "один миллиард", "два миллиарда", "три миллиарда", "четыре миллиарда", "пять миллиардов", "шесть миллиардов", "семь миллиардов", "восемь миллиардов", "девять миилиардов"
+    };
+
     public String toWords(){
         StringBuilder superStr = new StringBuilder();
-        for (int i = 1; i <= 19999; i++) {
+        for (int i = 1; i <= 999999999; i++) {
                 superStr.append(toWords(i));
-                superStr.append(", \n ");
+                superStr.append("\n");
             }
     return superStr.toString();
     }
@@ -47,6 +56,20 @@ public class ConverterStringBuilder implements IConverter {
             str  = convert1to9Thousands(n);
         } else if (n >= 10000 && n <= 19999) {
             str = convert10to19Thousands(n);
+        } else if (n >= 20000 && n <= 99999) {
+            str = convert20to99Thousands(n);
+        } else if (n >= 100000 && n <= 999999) {
+            str = convert100to999Thousands(n);
+        } else if (n >= 1000000 && n <= 9999999) {
+            str  = convert1to9Millions(n);
+        } else if (n >= 10000000 && n <= 19999999) {
+            str = convert10to19Millions(n);
+        } else if (n >= 20000000 && n <= 99999999) {
+            str = convert20to99Millions(n);
+        } else if (n >= 100000000 && n <= 999999999) {
+            str = convert100to999Millions(n);
+        } else if (n >= 1000000000 && n <= 2147483647) {
+            str  = convert1to2Billions(n);
         } else
             System.out.println("Illegal number!");
         return str.toString();
@@ -103,6 +126,93 @@ public class ConverterStringBuilder implements IConverter {
         if (n % 1000 > 0) {
             str.append(" ");
             str.append(toWords(n % 1000));
+        }
+        return str;
+    }
+
+      private StringBuilder convert20to99Thousands(int n) {
+        StringBuilder str = new StringBuilder();
+        str.append(twoDigits[n / 10000 - 2]);
+        if ((n % 10000 / 1000) > 0) {
+            str.append(" ");
+            str.append(convert1to9Thousands(n % 10000));
+        } else {
+            str.append(" тысяч");
+            if (n % 1000 > 0) {
+                str.append(" ");
+                str.append(toWords(n % 1000));
+            }
+        }
+        return str;
+    }
+
+    private StringBuilder convert100to999Thousands(int n) {
+        StringBuilder str = new StringBuilder();
+        str.append(hundreds[n / 100000 - 1]);
+        if (n % 100000 > 0) {
+            str.append(" ");
+            str.append(toWords(n % 100000));
+        } else {
+            str.append(" тысяч");
+        }
+        return str;
+    }
+
+    private StringBuilder convert1to9Millions(int n) {
+        StringBuilder str = new StringBuilder();
+        str.append(millions[n / 1000000 - 1]);
+        if (n % 1000000 > 0) {
+            str.append(" ");
+            str.append(toWords(n % 1000000));
+        }
+        return str;
+    }
+
+    private StringBuilder convert10to19Millions(int n) {
+        StringBuilder str = new StringBuilder();
+        str.append(convert10To99(n / 1000000 ));
+        str.append(" миллионов");
+        if (n % 1000000 > 0) {
+            str.append(" ");
+            str.append(toWords(n % 1000000));
+        }
+        return str;
+    }
+
+    private StringBuilder convert20to99Millions(int n) {
+        StringBuilder str = new StringBuilder();
+        str.append(twoDigits[n / 10000000 - 2]);
+        if ((n % 10000000 / 1000000) > 0) {
+            str.append(" ");
+            str.append(convert1to9Millions(n % 10000000));
+        } else {
+            str.append(" тысяч");
+            if (n % 1000000 > 0) {
+                str.append(" ");
+                str.append(toWords(n % 1000000));
+            }
+        }
+        return str;
+    }
+
+    private StringBuilder convert100to999Millions(int n) {
+        StringBuilder str = new StringBuilder();
+        str.append(hundreds[n / 100000000 - 1]);
+        if (n % 100000000 > 0) {
+            str.append(" ");
+            str.append(toWords(n % 100000000));
+        } else {
+            str.append(" миллионов");
+        }
+        return str;
+    }
+
+    private StringBuilder convert1to2Billions(int n) {
+        StringBuilder str = new StringBuilder();
+        str.append(billions[n / 1000000000 - 1]);
+        if (n % 1000000000 > 0) {
+            str.append(" ");
+            str.append(toWords(n % 1000000000));
         }
         return str;
     }

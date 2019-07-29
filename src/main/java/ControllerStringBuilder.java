@@ -14,16 +14,20 @@ public class ControllerStringBuilder {
     }
 
     public void start(){
+//        int i = 2147483647;
+//
+//        System.out.println(i);
+
         benchmark.start();
-        for (int i = 1; i <= 19999; i++) {
+        for (int i = 1; i <= 2147483647; i++) {
             consoleViewer.view(converter.toWords(i));
         }
         benchmark.finish();
-        record.setOneByOneTime(benchmark.countTimePassed());
 
-        benchmark.start();
-        consoleViewer.view(converter.toWords());
-        benchmark.finish();
-        record.setComplexTime(benchmark.countTimePassed());
+//        record.setOneByOneTime(benchmark.countTimePassed());
+//        benchmark.start();
+//        consoleViewer.view(converter.toWords());
+//        benchmark.finish();
+//        record.setComplexTime(benchmark.countTimePassed());
     }
 }
