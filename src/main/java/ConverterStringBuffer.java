@@ -64,28 +64,27 @@ public class ConverterStringBuffer implements IConverter {
             str.append(convert10To99(n));
         } else if (n >= 100 && n <= 999) {
             str.append(convert100To999(n));
-        } else if (n >= 1000 && n <= 9999) {
+        } else if (n >= 1_000 && n <= 9_999) {
             str.append(convert1to9Thousands(n));
-        } else if (n >= 10000 && n <= 19999) {
+        } else if (n >= 10_000 && n <= 19_999) {
             str.append(convert10to19Thousands(n));
-        } else if (n >= 20000 && n <= 99999) {
+        } else if (n >= 20_000 && n <= 99_999) {
             str.append(convert20to99Thousands(n));
-        } else if (n >= 100000 && n <= 999999) {
+        } else if (n >= 100_000 && n <= 999_999) {
             str.append(convert100to999Thousands(n));
-        } else if (n >= 1000000 && n <= 9999999) {
+        } else if (n >= 1_000_000 && n <= 9_999_999) {
             str.append(convert1to9Millions(n));
-        } else if (n >= 10000000 && n <= 19999999) {
+        } else if (n >= 10_000_000 && n <= 19_999_999) {
             str.append(convert10to19Millions(n));
-        } else if (n >= 20000000 && n <= 99999999) {
+        } else if (n >= 20_000_000 && n <= 99_999_999) {
             str.append(convert20to99Millions(n));
-        } else if (n >= 100000000 && n <= 999999999) {
+        } else if (n >= 100_000_000 && n <= 999_999_999) {
             str.append(convert100to999Millions(n));
-        } else if (n >= 1000000000 && n <= Integer.MAX_VALUE) {
+        } else if (n >= 1_000_000_000 && n <= Integer.MAX_VALUE) {
             str.append(convert1to2Billions(n));
         } else
             System.out.println("Illegal number!");
         return str;
-
     }
 
     private StringBuffer convert1To9(int n) {
