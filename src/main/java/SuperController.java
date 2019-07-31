@@ -12,8 +12,8 @@ public class SuperController {
     int last;
 
     public SuperController(){
-        first = 1;
-        last = 19999;
+        first = 2000000000;
+        last = 2000019000;
 
         consoleViewer = new ConsoleViewer();
         converterStringBuilder = new ConverterStringBuilder(first, last);
