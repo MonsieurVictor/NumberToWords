@@ -124,36 +124,36 @@ public class ConverterString implements IConverter {
 
     private String convert1to9Thousands(int n) {
         String str = new String();
-        str += thousands[n / 1000 - 1];
-        if (n % 1000 > 0) {
+        str += thousands[n / 1_000 - 1];
+        if (n % 1_000 > 0) {
             str += " ";
-            str += beginConverting(n % 1000);
+            str += beginConverting(n % 1_000);
         }
         return str;
     }
 
     private String convert10to19Thousands(int n) {
         String str = new String();
-        str += convert10To99(n / 1000 );
+        str += convert10To99(n / 1_000 );
         str += " тысяч";
-        if (n % 1000 > 0) {
+        if (n % 1_000 > 0) {
             str += " ";
-            str += beginConverting(n % 1000);
+            str += beginConverting(n % 1_000);
         }
         return str;
     }
 
     private String convert20to99Thousands(int n) {
         String str = new String();
-        str += twoDigits[n / 10000 - 2];
-        if ((n % 10000 / 1000) > 0) {
+        str += twoDigits[n / 1_0_000 - 2];
+        if ((n % 1_0_000 / 1_000) > 0) {
             str += " ";
-            str += convert1to9Thousands(n % 10000);
+            str += convert1to9Thousands(n % 1_0_000);
         } else {
             str += " тысяч";
-            if (n % 1000 > 0) {
+            if (n % 1_000 > 0) {
                 str += " ";
-                str += beginConverting(n % 1000);
+                str += beginConverting(n % 1_000);
             }
         }
         return str;
@@ -161,10 +161,10 @@ public class ConverterString implements IConverter {
 
     private String convert100to999Thousands(int n) {
         String str = new String();
-        str += hundreds[n / 100000 - 1];
-        if (n % 100000 > 0) {
+        str += hundreds[n / 100_000 - 1];
+        if (n % 100_000 > 0) {
             str += " ";
-            str += beginConverting(n % 100000);
+            str += beginConverting(n % 100_000);
         } else {
             str += " тысяч";
         }
@@ -173,36 +173,36 @@ public class ConverterString implements IConverter {
 
     private String convert1to9Millions(int n) {
         String str = new String();
-        str += millions[n / 1000000 - 1];
-        if (n % 1000000 > 0) {
+        str += millions[n / 1_000_000 - 1];
+        if (n % 1_000_000 > 0) {
             str += " ";
-            str += beginConverting(n % 1000000);
+            str += beginConverting(n % 1_000_000);
         }
         return str;
     }
 
     private String convert10to19Millions(int n) {
         String str = new String();
-        str += convert10To99(n / 1000000 );
+        str += convert10To99(n / 1_000_000 );
         str += " миллионов";
-        if (n % 1000000 > 0) {
+        if (n % 1_000_000 > 0) {
             str += " ";
-            str += beginConverting(n % 1000000);
+            str += beginConverting(n % 1_000_000);
         }
         return str;
     }
 
     private String convert20to99Millions(int n) {
         String str = new String();
-        str += twoDigits[n / 10000000 - 2];
-        if ((n % 10000000 / 1000000) > 0) {
+        str += twoDigits[n / 1_0_000_000 - 2];
+        if ((n % 1_0_000_000 / 1_000_000) > 0) {
             str += " ";
-            str += convert1to9Millions(n % 10000000);
+            str += convert1to9Millions(n % 1_0_000_000);
         } else {
             str += " миллионов";
-            if (n % 1000000 > 0) {
+            if (n % 1_000_000 > 0) {
                 str += " ";
-                str += beginConverting(n % 1000000);
+                str += beginConverting(n % 1_000_000);
             }
         }
         return str;
@@ -210,10 +210,10 @@ public class ConverterString implements IConverter {
 
     private String convert100to999Millions(int n) {
         String str = new String();
-        str += hundreds[n / 100000000 - 1];
-        if (n % 100000000 > 0) {
+        str += hundreds[n / 100_000_000 - 1];
+        if (n % 100_000_000 > 0) {
             str += " ";
-            str += beginConverting(n % 100000000);
+            str += beginConverting(n % 100_000_000);
         } else {
             str += " миллионов";
         }
@@ -222,10 +222,10 @@ public class ConverterString implements IConverter {
 
     private String convert1to2Billions(int n) {
         String str = new String();
-        str += billions[n / 1000000000 - 1];
-        if (n % 1000000000 > 0) {
+        str += billions[n / 1_000_000_000 - 1];
+        if (n % 1_000_000_000 > 0) {
             str += " ";
-            str += beginConverting(n % 1000000000);
+            str += beginConverting(n % 1_000_000_000);
         }
         return str;
     }

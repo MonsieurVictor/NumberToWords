@@ -16,10 +16,10 @@ public class SimpleBenchmark {
 
     public String getTimePassed(){
         passedTime = countTimePassed();
-        long hours = passedTime / (1000 * 60 * 60) % 24;
-        long minutes = (passedTime /(1000 * 60)) % 60;
-        long seconds = (passedTime / 1000) % 60;
-        passedTime = passedTime % 1000;
+        long hours = passedTime / (1_000 * 60 * 60) % 24;
+        long minutes = (passedTime /(1_000 * 60)) % 60;
+        long seconds = (passedTime / 1_000) % 60;
+        passedTime = passedTime % 1_000;
         return (hours + " h " + minutes + " m " + seconds + " s " + passedTime + " ms");
     }
 

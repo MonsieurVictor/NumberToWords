@@ -123,36 +123,36 @@ public class ConverterStringBuffer implements IConverter {
 
     private StringBuffer convert1to9Thousands(int n) {
         StringBuffer str = new StringBuffer();
-        str.append(thousands[n / 1000 - 1]);
-        if (n % 1000 > 0) {
+        str.append(thousands[n / 1_000 - 1]);
+        if (n % 1_000 > 0) {
             str.append(" ");
-            str.append(beginConverting(n % 1000));
+            str.append(beginConverting(n % 1_000));
         }
         return str;
     }
 
     private StringBuffer convert10to19Thousands(int n) {
         StringBuffer str = new StringBuffer();
-        str.append(convert10To99(n / 1000 ));
+        str.append(convert10To99(n / 1_000 ));
         str.append(" тысяч");
-        if (n % 1000 > 0) {
+        if (n % 1_000 > 0) {
             str.append(" ");
-            str.append(beginConverting(n % 1000));
+            str.append(beginConverting(n % 1_000));
         }
         return str;
     }
 
     private StringBuffer convert20to99Thousands(int n) {
         StringBuffer str = new StringBuffer();
-        str.append(twoDigits[n / 10000 - 2]);
-        if ((n % 10000 / 1000) > 0) {
+        str.append(twoDigits[n / 1_0_000 - 2]);
+        if ((n % 1_0_000 / 1_000) > 0) {
             str.append(" ");
-            str.append(convert1to9Thousands(n % 10000));
+            str.append(convert1to9Thousands(n % 1_0_000));
         } else {
             str.append(" тысяч");
-            if (n % 1000 > 0) {
+            if (n % 1_000 > 0) {
                 str.append(" ");
-                str.append(beginConverting(n % 1000));
+                str.append(beginConverting(n % 1_000));
             }
         }
         return str;
@@ -160,10 +160,10 @@ public class ConverterStringBuffer implements IConverter {
 
     private StringBuffer convert100to999Thousands(int n) {
         StringBuffer str = new StringBuffer();
-        str.append(hundreds[n / 100000 - 1]);
-        if (n % 100000 > 0) {
+        str.append(hundreds[n / 100_000 - 1]);
+        if (n % 100_000 > 0) {
             str.append(" ");
-            str.append(beginConverting(n % 100000));
+            str.append(beginConverting(n % 100_000));
         } else {
             str.append(" тысяч");
         }
@@ -172,36 +172,36 @@ public class ConverterStringBuffer implements IConverter {
 
     private StringBuffer convert1to9Millions(int n) {
         StringBuffer str = new StringBuffer();
-        str.append(millions[n / 1000000 - 1]);
-        if (n % 1000000 > 0) {
+        str.append(millions[n / 1_000_000 - 1]);
+        if (n % 1_000_000 > 0) {
             str.append(" ");
-            str.append(beginConverting(n % 1000000));
+            str.append(beginConverting(n % 1_000_000));
         }
         return str;
     }
 
     private StringBuffer convert10to19Millions(int n) {
         StringBuffer str = new StringBuffer();
-        str.append(convert10To99(n / 1000000 ));
+        str.append(convert10To99(n / 1_000_000 ));
         str.append(" миллионов");
-        if (n % 1000000 > 0) {
+        if (n % 1_000_000 > 0) {
             str.append(" ");
-            str.append(beginConverting(n % 1000000));
+            str.append(beginConverting(n % 1_000_000));
         }
         return str;
     }
 
     private StringBuffer convert20to99Millions(int n) {
         StringBuffer str = new StringBuffer();
-        str.append(twoDigits[n / 10000000 - 2]);
-        if ((n % 10000000 / 1000000) > 0) {
+        str.append(twoDigits[n / 1_0_000_000 - 2]);
+        if ((n % 1_0_000_000 / 1_000_000) > 0) {
             str.append(" ");
-            str.append(convert1to9Millions(n % 10000000));
+            str.append(convert1to9Millions(n % 1_0_000_000));
         } else {
             str.append(" миллионов");
-            if (n % 1000000 > 0) {
+            if (n % 1_000_000 > 0) {
                 str.append(" ");
-                str.append(beginConverting(n % 1000000));
+                str.append(beginConverting(n % 1_000_000));
             }
         }
         return str;
@@ -209,10 +209,10 @@ public class ConverterStringBuffer implements IConverter {
 
     private StringBuffer convert100to999Millions(int n) {
         StringBuffer str = new StringBuffer();
-        str.append(hundreds[n / 100000000 - 1]);
-        if (n % 100000000 > 0) {
+        str.append(hundreds[n / 100_000_000 - 1]);
+        if (n % 100_000_000 > 0) {
             str.append(" ");
-            str.append(beginConverting(n % 100000000));
+            str.append(beginConverting(n % 100_000_000));
         } else {
             str.append(" миллионов");
         }
@@ -221,10 +221,10 @@ public class ConverterStringBuffer implements IConverter {
 
     private StringBuffer convert1to2Billions(int n) {
         StringBuffer str = new StringBuffer();
-        str.append(billions[n / 1000000000 - 1]);
-        if (n % 1000000000 > 0) {
+        str.append(billions[n / 1_000_000_000 - 1]);
+        if (n % 1_000_000_000 > 0) {
             str.append(" ");
-            str.append(beginConverting(n % 1000000000));
+            str.append(beginConverting(n % 1_000_000_000));
         }
         return str;
     }
