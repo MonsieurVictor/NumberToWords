@@ -1,8 +1,6 @@
 package main.java;
 
 public class ControllerStringBuilder {
-
-
     ConverterStringBuilder converter;
     ConsoleViewer consoleViewer;
     SimpleBenchmark benchmark = new SimpleBenchmark();
@@ -13,21 +11,17 @@ public class ControllerStringBuilder {
         this.converter = converter;
     }
 
-    public void start(){
-//        int i = 2147483647;
-//
-//        System.out.println(i);
-
+    public void start(int first, int last){
         benchmark.start();
-        for (int i = 1; i <= 2147483647; i++) {
+        for (int i = first; i >= 1 && i <= last; i++) {
             consoleViewer.view(converter.toWords(i));
         }
         benchmark.finish();
 
-//        record.setOneByOneTime(benchmark.countTimePassed());
-//        benchmark.start();
-//        consoleViewer.view(converter.toWords());
-//        benchmark.finish();
-//        record.setComplexTime(benchmark.countTimePassed());
+        record.setOneByOneTime(benchmark.getTimePassed());
+        benchmark.start();
+        consoleViewer.view(converter.toWords());
+        benchmark.finish();
+        record.setComplexTime(benchmark.getTimePassed());
     }
 }

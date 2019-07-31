@@ -11,18 +11,17 @@ public class ControllerStringBuffer {
         this.converter = converter;
     }
 
-    public void start(){
+    public void start(int first, int last){
         benchmark.start();
-        for (int i = 1; i <= 999; i++) {
+        for (int i = first; i >= 1 && i <= last; i++) {
             consoleViewer.view(converter.toWords(i));
         }
         benchmark.finish();
-        record.setOneByOneTime(benchmark.countTimePassed());
 
+        record.setOneByOneTime(benchmark.getTimePassed());
         benchmark.start();
         consoleViewer.view(converter.toWords());
         benchmark.finish();
-        record.setComplexTime(benchmark.countTimePassed());
+        record.setComplexTime(benchmark.getTimePassed());
     }
-
 }

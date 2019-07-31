@@ -2,22 +2,22 @@ package main.java;
 
 public class Record {
 
-    public long complexTime;
-    public long oneByOneTime;
+    public String complexTime;
+    public String oneByOneTime;
 
-    public long getComplexTime() {
+    public String getComplexTime() {
         return complexTime;
     }
 
-    public void setComplexTime(long compleTime) {
-        this.complexTime = compleTime;
+    public void setComplexTime(String complexTime) {
+        this.complexTime = complexTime;
     }
 
-    public long getOneByOneTime() {
+    public String getOneByOneTime() {
         return oneByOneTime;
     }
 
-    public void setOneByOneTime(long oneByOneTime) {
+    public void setOneByOneTime(String oneByOneTime) {
         this.oneByOneTime = oneByOneTime;
     }
 
