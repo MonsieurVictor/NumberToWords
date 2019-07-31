@@ -19,6 +19,7 @@ public class SimpleBenchmark {
         long seconds = (passedTime / 1000) % 60;
         long minutes = (passedTime /(1000 * 60)) % 60;
         long hours = passedTime / (1000 * 60 * 60) % 24;
+        passedTime = passedTime % 1000;
         return (hours + " h " + minutes + " m " + seconds + " s " + passedTime + " ms");
     }
 
